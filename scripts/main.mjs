@@ -1,71 +1,11 @@
-const map = document.querySelector('.map')
-
-let
-    viewX = 0,
-    viewY = 0,
-    cursX = 0,
-    cursY = 0,
-    scale = 100
+import Camera from "./Camera.mjs";
 
 
-function followCursor(e, curX, curY) {
-    viewX -= e.movementX
-    viewY -= e.movementY
+const camera = new Camera()
+camera.init()
 
-    map.style.left = viewX + "px"
-    map.style.top = viewY + "px"
-}
-
-function trailCursor(deadzone, speed){
-    const
-        halfW = window.innerWidth/2,
-        halfH = window.innerHeight/2
-
-    const dX = cursX - halfW
-    const dY = cursY - halfH
-
-    if(Math.abs(dY) + Math.abs(dX) < deadzone) return
-
-    viewX -= speed * dX * 2 /100
-    viewY -= speed * dY * 2 /100
-    map.style.left = viewX + "px"
-    map.style.top = viewY + "px"
-}
-
-
-onmousemove = function (e)  {
-    cursX = e.clientX
-    cursY = e.clientY
-}
-
-onwheel = function (e){
-    scale = Math.min(Math.max(scale + e.deltaY/100, 10), 150)
-    map.style.scale = scale + "%"
-}
-
-let isRendering = false
-
-onkeyup = (e) => {
-    if(e.code === "Space"){
-        isRendering = !isRendering
-        if(isRendering) spleen()
-    }
-}
-
-document.documentElement.addEventListener('mouseleave', () => {
-    isRendering = false
+const uis = document.querySelectorAll('.ui')
+uis.forEach(ui => {
+    ui.addEventListener('mouseenter', camera.pause)
+    ui.addEventListener('mouseleave', camera.continue)
 })
-
-document.documentElement.addEventListener('mouseenter', () => {
-    isRendering = true
-    spleen()
-})
-
-function spleen (){
-    trailCursor(150, 1)
-    if(isRendering){
-        requestAnimationFrame(spleen)
-    }
-}
-
-spleen()

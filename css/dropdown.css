@@ -1,0 +1,35 @@
+.drop-toggle > * {
+    z-index: 999
+}
+
+#gear {
+    position: fixed;
+    bottom: 1em;
+    left: 1em;
+    width: 4em;
+    height: 4em;
+    transition: transform 1s;
+}
+
+.drop-toggle:hover > #gear {
+    transform: rotate(180deg);
+    transition: transform 1s;
+    cursor: pointer;
+}
+
+#settings {
+    min-width:200px;
+    width: 20em;
+    height: 100vh;
+    position: absolute;
+    left:-20em;
+    background-color: var(--color-secondary);
+    transition: left 1s 0.25s
+}
+
+
+
+.drop-toggle:hover > .drop-content, .drop-content:hover {
+    left: 0 !important;
+    transition: left 1s 0.25s
+}

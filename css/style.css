@@ -1,4 +1,5 @@
 @import "pressable.css";
+@import "dropdown.css";
 
 @font-face {
     font-family: 'Gabarito-VariableFont_wght';
@@ -108,3 +109,4 @@ em {
 .map {
     position: absolute;
 }
+
