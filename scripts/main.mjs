@@ -26,9 +26,8 @@ function trailCursor(deadzone, speed){
 
     if(Math.abs(dY) + Math.abs(dX) < deadzone) return
 
-    viewX -= speed * dX /100
-    viewY -= speed * dY /100
-
+    viewX -= speed * dX * 2 /100
+    viewY -= speed * dY * 2 /100
     map.style.left = viewX + "px"
     map.style.top = viewY + "px"
 }
@@ -40,15 +39,30 @@ onmousemove = function (e)  {
 }
 
 onwheel = function (e){
-    console.log('deltaY', e.deltaY)
     scale = Math.min(Math.max(scale + e.deltaY/100, 10), 150)
     map.style.scale = scale + "%"
 }
 
-let isRendering = true
+let isRendering = false
+
+onkeyup = (e) => {
+    if(e.code === "Space"){
+        isRendering = !isRendering
+        if(isRendering) spleen()
+    }
+}
+
+document.documentElement.addEventListener('mouseleave', () => {
+    isRendering = false
+})
+
+document.documentElement.addEventListener('mouseenter', () => {
+    isRendering = true
+    spleen()
+})
 
 function spleen (){
-    trailCursor(200, 1)
+    trailCursor(150, 1)
     if(isRendering){
         requestAnimationFrame(spleen)
     }
