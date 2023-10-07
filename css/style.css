@@ -32,12 +32,15 @@
     --color-blue-electric: rgba(0,212,255,1);
 }
 
+body, map {
+    overflow: hidden;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: JosefinSans-VariableFont_wght, sans-serif;
-
 }
 
 body {

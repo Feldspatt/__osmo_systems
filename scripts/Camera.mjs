@@ -7,7 +7,7 @@ export default class {
     cursX= window.innerWidth/2
     cursY= window.innerHeight/2
     scale= 100
-    deadzone = null
+    deadzone = 15
     speed = 1
     toggleKey = 'Space'
     locked = true
