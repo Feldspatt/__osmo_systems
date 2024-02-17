@@ -24,12 +24,12 @@
 
 
 :root {
-    --color-primary: #000000;
-    --color-secondary: #639fd5;
-    --color-ternary: #886f55;
-    --color-background-primary: #fffafa;
+    --c_1: rgb(0,0,0);
+    --c_2: rgb(99,159,213);
 
-    --color-blue-electric: rgba(0,212,255,1);
+    --c_bg_1: #fffafa;
+
+    --c_1a: rgba
 }
 
 body, map {
@@ -86,7 +86,7 @@ em {
 }
 
 .subtitle {
-    color: var(--color-secondary);
+    color: var(--c_2);
     font-size: 1.5em;
     font-weight: 800;
     opacity: 0;
@@ -102,14 +102,41 @@ em {
 
 .nav-grid > * {
     aspect-ratio: 1;
-    color: var(--color-background-primary);
+    color: var(--c_bg_1);
 }
 
 .nav-grid > div > div {
-    background-color: var(--color-secondary)
+    background-color: var(--c_2)
 }
 
 .map {
     position: absolute;
 }
 
+#settings {
+    background-color: color-mix(in srgb, var(--c_2), transparent);
+    backdrop-filter: blur(5px);
+    transition: left 1s 0.25s;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 1em;
+    padding: 1em;
+
+    font-size: 1.2em;
+}
+
+.panel {
+    min-height: 800px;
+    min-width: 800px;
+}
+
+.card {
+    display: inline-block;
+}
+
+.card > * {
+    background: indianred;
+    padding: 2em;
+    display: block;
+}
