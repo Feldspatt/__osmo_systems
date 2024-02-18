@@ -74,8 +74,6 @@ export default class {
     moveMap = () => {
         this.map.style.left = this.viewX + "px"
         this.map.style.top = this.viewY + "px"
-
-        this.map.style.perspectiveOrigin = this.viewX + "px" + " " + this.viewY + "px"
     }
 
 
