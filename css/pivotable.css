@@ -1,0 +1,22 @@
+.pivotable {
+    transform-style: preserve-3d;
+}
+
+.pivotable img {
+    max-height: 100px;
+}
+
+.pivotable > * {
+    border: solid;
+    border-radius: 2px;
+    height: 100%;
+    width: 100%;
+    transition-duration: 0.4s;
+    transition-timing-function: ease-out;
+    background-color: color-mix(in srgb, var(--c_2) 90%, transparent) !important;
+    backdrop-filter: blur(5px);
+}
+
+.pivotable:hover > * {
+    transform: translateX(-25px) translateZ(150px) rotateY(var(--a-base));
+}

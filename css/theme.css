@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'Gabarito-VariableFont_wght';
+    src: url('/assets/fonts/Gabarito/Gabarito-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JosefinSans-VariableFont_wght';
+    src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'JosefinSans-Italic-VariableFont_wght';
+    src: url('/assets/fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+:root {
+    --c_1: rgb(0,0,0);
+    --c_2: rgb(94, 172, 240);
+
+    --c_bg_1: #fffafa;
+    font-family: JosefinSans-VariableFont_wght, sans-serif;
+
+}

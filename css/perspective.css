@@ -1,0 +1,20 @@
+:root {
+    --perspective: 900px;
+    --a-base: 45deg;
+}
+
+.p-container {
+    perspective: var(--perspective); /* Define the perspective depth */
+}
+
+.p-proxy {
+    transform-style: preserve-3d;
+}
+
+.p-right {
+    transform:  rotateY(calc(var(--a-base)*-1)) translateZ(-100px); /* Apply a 3D transformation */
+}
+
+.p-left {
+    transform: rotateY(var(--a-base))  translateX(100px); /* Apply a 3D transformation */
+}

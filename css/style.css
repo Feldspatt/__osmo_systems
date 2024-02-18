@@ -1,46 +1,22 @@
+@import "theme.css";
 @import "pressable.css";
 @import "dropdown.css";
-
-@font-face {
-    font-family: 'Gabarito-VariableFont_wght';
-    src: url('/assets/fonts/Gabarito/Gabarito-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'JosefinSans-VariableFont_wght';
-    src: url('/assets/fonts/Josefin_Sans/JosefinSans-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'JosefinSans-Italic-VariableFont_wght';
-    src: url('/assets/fonts/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import "perspective.css";
+@import "landmap.css";
+@import "pivotable.css";
+@import "text.css";
+/*@import "debug.css";*/
 
 
-:root {
-    --c_1: rgb(0,0,0);
-    --c_2: rgb(99,159,213);
-
-    --c_bg_1: #fffafa;
-
-    --c_1a: rgba
-}
-
-body, map {
+body{
     overflow: hidden;
+    font-size:1.5rem;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: JosefinSans-VariableFont_wght, sans-serif;
 }
 
 body {
@@ -65,11 +41,8 @@ em {
 
 .dyptique {
     padding: 2em;
-    font-size: 2em;
-    min-height: 100vh;
-    min-width: 100vw;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(300px, 800px) minmax(300px, 1fr);
     align-items: center;
     justify-items: center;
 
@@ -85,9 +58,13 @@ em {
     }
 }
 
+h1 {
+    font-size: 3em;
+}
+
 .subtitle {
     color: var(--c_2);
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 800;
     opacity: 0;
     animation: appear 1s ease-in-out 1.5s forwards;
@@ -127,8 +104,8 @@ em {
 }
 
 .panel {
-    min-height: 800px;
-    min-width: 800px;
+    min-height: 100vh;
+    min-width: 100vw;
 }
 
 .card {
@@ -139,4 +116,8 @@ em {
     background: indianred;
     padding: 2em;
     display: block;
+}
+
+.click {
+    cursor: pointer;
 }

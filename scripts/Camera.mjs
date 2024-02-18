@@ -12,7 +12,6 @@ export default class {
     toggleKey = 'Space'
     locked = true
 
-
     continue = (_,unlock = false)=> {
         if(this.locked && unlock) this.locked = false
         if(this.locked) return
@@ -58,8 +57,9 @@ export default class {
             halfW = window.innerWidth/2,
             halfH = window.innerHeight/2
 
-        let  dX = this.cursX - halfW,
-             dY = this.cursY - halfH
+        let
+            dX = this.cursX - halfW,
+            dY = this.cursY - halfH
 
         dX += (Math.abs(dX)>0) ? -this.deadzone : this.deadzone
         dY += (Math.abs(dY)>0) ? -this.deadzone : this.deadzone
@@ -68,8 +68,14 @@ export default class {
 
         this.viewX -= this.speed * dX * 2 /100
         this.viewY -= this.speed * dY * 2 /100
+
+    }
+
+    moveMap = () => {
         this.map.style.left = this.viewX + "px"
         this.map.style.top = this.viewY + "px"
+
+        this.map.style.perspectiveOrigin = this.viewX + "px" + " " + this.viewY + "px"
     }
 
 
@@ -89,6 +95,7 @@ export default class {
 
     loop = ()=> {
         this.followCursor(this.deadzone, this.speed)
+        this.moveMap()
         if(this.isActive){
             requestAnimationFrame(this.loop)
         }
